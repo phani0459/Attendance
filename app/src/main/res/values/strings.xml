@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Attendance</string>
+    <string name="date">Date:</string>
+    <string name="present">PRESENT</string>
+    <string name="submit">SUBMIT</string>
+    <string name="absent">ABSENT</string>
+    <string name="title_activity_show_attendance">Show Attendance</string>
+    <string name="title_activity_where_am_i">Where Am I</string>
+</resources>
