@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.attendance.R;
+import com.attendance.ui.attendance_list.AttendanceListActivity;
 import com.attendance.ui.give_attendance.AttendanceActivity;
 import com.attendance.ui.location.WhereAmIActivity;
 import com.attendance.ui.base.BaseActivity;
@@ -54,8 +55,8 @@ public class LauncherActivity extends BaseActivity implements LauncherView{
 
     @Override
     public void openshowAttendance() {
-/*Intent intent = new Intent(LauncherActivity.class);
-        startActivity(intent);*/
+        Intent intent = new Intent(this, AttendanceListActivity.class);
+        startActivity(intent);
     }
 
     @Override

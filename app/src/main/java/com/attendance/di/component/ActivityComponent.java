@@ -2,6 +2,7 @@ package com.attendance.di.component;
 
 import com.attendance.di.PerActivity;
 import com.attendance.di.module.ActivityModule;
+import com.attendance.ui.attendance_list.AttendanceListActivity;
 import com.attendance.ui.give_attendance.AttendanceActivity;
 import com.attendance.ui.location.WhereAmIActivity;
 import com.attendance.ui.launcher.LauncherActivity;
@@ -17,5 +18,7 @@ public interface ActivityComponent {
     void inject(AttendanceActivity activity);
 
     void inject(WhereAmIActivity activity);
+
+    void inject(AttendanceListActivity activity);
 
 }

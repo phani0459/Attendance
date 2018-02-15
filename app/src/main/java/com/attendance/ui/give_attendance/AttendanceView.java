@@ -1,5 +1,7 @@
 package com.attendance.ui.give_attendance;
 
+import android.location.Location;
+
 import com.attendance.ui.base.BaseView;
 
 /**
@@ -12,5 +14,13 @@ public interface AttendanceView extends BaseView {
 
     void submitAttendance();
 
-    void changeAttendance();
+    void changeAttendance(Location mLastKnownLocation);
+
+    void showPermissionDialog(boolean show);
+
+    void showLoading();
+
+    void hideLoading();
+
+    void isTodayAttendanceGiven(boolean enable);
 }

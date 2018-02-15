@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.attendance.BuildConfig;
+import com.attendance.database.LocalCacheManager;
 import com.attendance.di.ApplicationContext;
 import com.attendance.di.DatabaseInfo;
 import com.attendance.utils.Constants;
@@ -38,17 +39,5 @@ public class ApplicationModule {
     String provideDatabaseName() {
         return Constants.DB_NAME;
     }
-
-    /*@Provides
-    @Singleton
-    DataManager provideDataManager(AppDataManager appDataManager) {
-        return appDataManager;
-    }
-
-    @Provides
-    @Singleton
-    DbHelper provideDbHelper(AppDbHelper appDbHelper) {
-        return appDbHelper;
-    }*/
 
 }

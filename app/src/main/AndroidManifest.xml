@@ -39,6 +39,7 @@
         </activity>
         <activity android:name=".ui.location.WhereAmIActivity" />
         <activity android:name=".ui.give_attendance.AttendanceActivity" />
+        <activity android:name=".ui.attendance_list.AttendanceListActivity" />
     </application>
 
 </manifest>

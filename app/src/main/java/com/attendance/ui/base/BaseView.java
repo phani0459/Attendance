@@ -7,4 +7,5 @@ package com.attendance.ui.base;
 public interface BaseView {
 
     void showMessage(String message);
+
 }

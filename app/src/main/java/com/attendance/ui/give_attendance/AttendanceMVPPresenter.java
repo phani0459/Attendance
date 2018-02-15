@@ -8,9 +8,13 @@ import com.attendance.ui.base.MvpPresenter;
 
 public interface AttendanceMVPPresenter<V extends AttendanceView> extends MvpPresenter<V> {
 
-    void onSubmitAttendanceClick();
+    void onSubmitAttendanceClick(String date, int isPresent);
 
     void onGetTodaysDate();
 
+    void getLocationPermission();
+
     void onGetCurrentLocation();
+
+    void checkTodaysAttendance(String date);
 }
