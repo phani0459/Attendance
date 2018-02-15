@@ -109,8 +109,8 @@ public class WhereAmIActivity extends BaseActivity implements OnMapReadyCallback
     }
 
     @Override
-    public void showPermissionDialog() {
-        if (ContextCompat.checkSelfPermission(this.getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+    public void showPermissionDialog(boolean show) {
+        if (show) {
             mLocationPermissionGranted = true;
         } else {
             requestPermissionsSafely(new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
@@ -164,7 +164,6 @@ public class WhereAmIActivity extends BaseActivity implements OnMapReadyCallback
                 mMap.setMyLocationEnabled(false);
                 mMap.getUiSettings().setMyLocationButtonEnabled(false);
                 mLastKnownLocation = null;
-                mPresenter.getLocationPermission();
             }
         } catch (SecurityException e) {
             Log.e("Exception: %s", e.getMessage());

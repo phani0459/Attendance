@@ -8,7 +8,7 @@ import com.attendance.ui.base.BaseView;
 
 public interface WhereAmIView extends BaseView {
 
-    void showPermissionDialog();
+    void showPermissionDialog(boolean show);
     void showCurrentLocation();
 
     void getDeviceLocation();

@@ -16,4 +16,6 @@ public class Constants {
 
     public static final String DB_NAME = "attendance_mgmt.db";
     public static final String TIMESTAMP_FORMAT = "dd-MM-yyyy";
+    public static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
+    public static final String USER_TABLE_NAME = "userTable";
 }
