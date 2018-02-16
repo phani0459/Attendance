@@ -12,9 +12,4 @@
         android:title="Year"
         app:showAsAction="never" />
 
-    <item
-        android:id="@+id/by_dates"
-        android:title="Select Dates"
-        app:showAsAction="never" />
-
 </menu>

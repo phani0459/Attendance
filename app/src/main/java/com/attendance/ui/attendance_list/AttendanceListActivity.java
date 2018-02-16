@@ -107,7 +107,6 @@ public class AttendanceListActivity extends BaseActivity implements ListMvpView{
 
     @Override
     public void showFilteredList(String selectedDate) {
-        Log.e("TAGTAG", "showFilteredList: " + selectedDate );
         mPresenter.showFilteredList(selectedDate);
         mPresenter.dismissDialog();
     }
