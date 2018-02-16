@@ -16,4 +16,6 @@ public interface ListMvpView extends BaseView {
     void showExistDates();
 
     void showNotExistDates();
+
+    void showFilteredList(String selectedDate);
 }

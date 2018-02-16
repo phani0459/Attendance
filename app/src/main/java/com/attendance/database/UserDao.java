@@ -26,8 +26,8 @@ public interface UserDao {
     @Query("SELECT * FROM " + Constants.USER_TABLE_NAME)
     Maybe<List<User>> getAllUsers();
 
-    @Query("SELECT * FROM " + Constants.USER_TABLE_NAME + " WHERE date IN (:dates)")
-    Flowable<List<User>> loadByDates(String[] dates);
+    @Query("SELECT * FROM " + Constants.USER_TABLE_NAME + " WHERE date LIKE (:dates)")
+    Flowable<List<User>> loadByDates(String dates);
 
     @Query("SELECT * FROM " + Constants.USER_TABLE_NAME + " WHERE date IN (:date)")
     Flowable<User> getUserByDate(String date);

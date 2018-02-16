@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -12,6 +14,7 @@ import com.attendance.R;
 import com.attendance.database.User;
 import com.attendance.ui.base.BaseActivity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -69,9 +72,23 @@ public class AttendanceListActivity extends BaseActivity implements ListMvpView{
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.attendance_filter, menu);
+        return true;
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             finish();
+        }
+
+        if (item.getItemId() == R.id.by_month) {
+            mPresenter.showDatePicker(true);
+        }
+
+        if (item.getItemId() == R.id.by_year) {
+            mPresenter.showDatePicker(false);
         }
         return super.onOptionsItemSelected(item);
     }
@@ -88,6 +105,13 @@ public class AttendanceListActivity extends BaseActivity implements ListMvpView{
         llAttendanceNotExist.setVisibility(View.VISIBLE);
     }
 
+    @Override
+    public void showFilteredList(String selectedDate) {
+        Log.e("TAGTAG", "showFilteredList: " + selectedDate );
+        mPresenter.showFilteredList(selectedDate);
+        mPresenter.dismissDialog();
+    }
+
 
     @Override
     public void showLoading() {
@@ -101,6 +125,7 @@ public class AttendanceListActivity extends BaseActivity implements ListMvpView{
 
     @Override
     public void updateList(List<User> userList) {
+        mListAdapter.removeAll();
         mListAdapter.addItems(userList);
     }
 }

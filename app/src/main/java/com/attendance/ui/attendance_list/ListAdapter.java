@@ -10,6 +10,7 @@ import com.attendance.R;
 import com.attendance.database.User;
 import com.attendance.ui.base.BaseViewHolder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -45,6 +46,11 @@ public class ListAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
     public void addItems(List<User> userList) {
         mAttendanceList.addAll(userList);
+        notifyDataSetChanged();
+    }
+
+    public void removeAll() {
+        mAttendanceList = new ArrayList<>();
         notifyDataSetChanged();
     }
 

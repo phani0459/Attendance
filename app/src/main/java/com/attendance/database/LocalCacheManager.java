@@ -53,6 +53,18 @@ public class LocalCacheManager {
         });
     }
 
+    public void getUsers(final DatabaseCallBack databaseCallback, String filtered) {
+        db.userDao().loadByDates("%" + filtered + "%").subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<List<User>>() {
+
+            @Override
+
+            public void accept(@io.reactivex.annotations.NonNull List<User> users) throws Exception {
+                databaseCallback.onUsersLoaded(users);
+            }
+
+        });
+    }
+
     public void getUsers(final DatabaseCallBack databaseCallback) {
         db.userDao().getAllUsers().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<List<User>>() {
 
